@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rwc23r30x-java-springboot-gitops
+  description: This is GitOps manifest for rwc23r30x-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=rwc23r30x-java-springboot
+    backstage.io/kubernetes-id: rwc23r30x-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: rwc23r30x-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rwc23r30x-java-springboot
